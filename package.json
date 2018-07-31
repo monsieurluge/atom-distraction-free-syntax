@@ -1,8 +1,8 @@
 {
   "name": "distraction-free-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
-  "description": "less colors, less distraction",
+  "version": "0.1.0",
+  "description": "less colors, less informations, less distraction",
   "keywords": [
     "syntax",
     "theme"
