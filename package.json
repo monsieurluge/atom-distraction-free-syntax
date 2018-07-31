@@ -1,0 +1,15 @@
+{
+  "name": "distraction-free-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "less colors, less distraction",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/atom/distraction-free-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
