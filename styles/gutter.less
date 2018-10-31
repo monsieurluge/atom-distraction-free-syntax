@@ -1,0 +1,40 @@
+atom-text-editor {
+  .gutter.line-numbers {
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    .line-number {
+      opacity: 1;
+    }
+
+    .line-number.cursor-line {
+      color: @syntax-gutter-text-color-selected;
+      background-color: @syntax-gutter-background-color-selected;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .gutter {
+    color: @syntax-gutter-text-color;
+
+    .line-number.folded,
+    .line-number:after {
+      color: @accent;
+    }
+  }
+
+  .fold-marker {
+    padding: 0 3px;
+    color: @syntax-text-color;
+    background-color: @accent;
+    border-radius: 3px;
+
+    &:after {
+      content: '...';
+    }
+  }
+}
