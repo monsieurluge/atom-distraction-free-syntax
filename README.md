@@ -2,6 +2,8 @@
 
 A distraction free syntax theme for the Atom editor.
 
+Works well with the [distraction free UI theme](https://atom.io/themes/atom-distraction-free-ui-theme).
+
 ## Features
 
  - minimal color usage
