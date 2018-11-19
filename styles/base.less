@@ -67,16 +67,17 @@ atom-text-editor {
   .syntax--constant {
     color: @red;
 
-    &.syntax--numeric {
-        color: @syntax-text-color;
-    }
-
     &.syntax--language {
       color: @highlight-language;
     }
 
     &.syntax--character.syntax--escape {
       color: @highlight-language;
+    }
+
+    &.syntax--decimal,
+    &.syntax--numeric {
+      color: @green;
     }
   }
 
@@ -92,8 +93,9 @@ atom-text-editor {
     color: @green;
   }
 
-  .syntax--string {
-    color: @green;
+  &.syntax--decimal,
+  &.syntax--numeric {
+      color: @green;
   }
 
   .syntax--string.syntax--function {
