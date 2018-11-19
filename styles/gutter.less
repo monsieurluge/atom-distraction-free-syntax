@@ -1,5 +1,6 @@
 atom-text-editor {
   .gutter.line-numbers {
+    color: @syntax-foreground-faded;
     opacity: 0;
     transition: opacity 0.5s;
 
@@ -9,8 +10,7 @@ atom-text-editor {
 
     .line-number.cursor-line {
       color: @syntax-gutter-text-color-selected;
-      background-color: @syntax-gutter-background-color-selected;
-      border-radius: 3px;
+      background-color: transparent;
     }
 
     &:hover {
@@ -19,7 +19,7 @@ atom-text-editor {
   }
 
   .gutter {
-    color: @syntax-gutter-text-color;
+    color: @syntax-text-color;
 
     .line-number.folded,
     .line-number:after {
