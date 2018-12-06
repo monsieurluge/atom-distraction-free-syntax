@@ -1,6 +1,6 @@
 atom-text-editor {
   .gutter.line-numbers {
-    color: @syntax-foreground-faded;
+    color: @syntax-gutter-text-color;
     opacity: 0;
     transition: opacity 0.5s;
 
@@ -19,8 +19,6 @@ atom-text-editor {
   }
 
   .gutter {
-    color: @syntax-text-color;
-
     .line-number.folded,
     .line-number:after {
       color: @accent;
