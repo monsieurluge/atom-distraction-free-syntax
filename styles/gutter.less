@@ -1,29 +1,25 @@
-atom-text-editor {
-  .gutter.line-numbers {
-    color: @syntax-gutter-text-color;
-    opacity: 0;
-    transition: opacity 0.5s;
+atom-text-editor .gutter {
 
+  // -------------------------------------------------------------- LINE NUMBERS
+
+  &.line-numbers {
     .line-number {
-      opacity: 1;
+      color: @syntax-gutter-text-color;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
 
     .line-number.cursor-line {
       color: @syntax-gutter-text-color-selected;
-      background-color: transparent;
+      opacity: 1;
     }
 
-    &:hover {
+    &:hover .line-number {
       opacity: 1;
     }
   }
 
-  .gutter {
-    .line-number.folded,
-    .line-number:after {
-      color: @accent;
-    }
-  }
+  // --------------------------------------------------------------- FOLD MARKER
 
   .fold-marker {
     padding: 0 3px;
@@ -34,5 +30,10 @@ atom-text-editor {
     &:after {
       content: '...';
     }
+  }
+
+  .line-number.folded,
+  .line-number:after {
+    color: @accent;
   }
 }
