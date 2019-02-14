@@ -27,6 +27,20 @@ atom-text-editor {
     color: @syntax-cursor-color;
   }
 
+  // --------------------------------------------------------------- FOLD MARKER
+
+  .fold-marker {
+      padding: 0 3px;
+      color: @syntax-text-color;
+      background-color: @accent;
+      border-radius: 3px;
+
+      &:after {
+        cursor: pointer;
+        content: '...';
+      }
+  }
+
   // ------------------------------------------------------------- SYNTAX STYLES
 
   .syntax--punctuation {

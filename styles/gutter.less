@@ -21,19 +21,7 @@ atom-text-editor .gutter {
 
   // --------------------------------------------------------------- FOLD MARKER
 
-  .fold-marker {
-    padding: 0 3px;
-    color: @syntax-text-color;
-    background-color: @accent;
-    border-radius: 3px;
-
-    &:after {
-      content: '...';
-    }
-  }
-
-  .line-number.folded,
-  .line-number:after {
+  &.line-numbers .line-number.folded {
     color: @accent;
   }
 }
