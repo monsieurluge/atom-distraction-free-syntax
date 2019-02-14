@@ -3,19 +3,19 @@ atom-text-editor {
   background-color: @syntax-background-color;
 
   .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
+    background-color: @syntax-selection-color;
   }
 
   .indent-guide {
     color: transparent;
-    border-left: 1px solid @syntax-wrap-guide-color;
   }
 
   .invisible-character {
     color: @syntax-background-color;
   }
 
-  .line.cursor-line {
+  .line.cursor-line,
+  .selection .region {
     background-color: @syntax-selection-color;
   }
 
@@ -27,21 +27,17 @@ atom-text-editor {
     color: @syntax-cursor-color;
   }
 
-  .selection .region {
-    background-color: @syntax-selection-color;
-  }
-
   // ------------------------------------------------------------- SYNTAX STYLES
 
   .syntax--punctuation {
-    color: fadeout(@syntax-text-color, 40%);
+    color: fadeout(@syntax-text-color, 50%);
   }
 
   .syntax--keyword {
     color: @highlight-language;
 
     &.syntax--operator:not(.syntax--new) {
-      color: fadeout(@syntax-text-color, 40%);
+      color: fadeout(@syntax-text-color, 50%);
     }
   }
 
@@ -59,7 +55,7 @@ atom-text-editor {
       }
 
       &.syntax--type.syntax--arrow {
-        color: fadeout(@syntax-text-color, 40%);
+        color: fadeout(@syntax-text-color, 50%);
       }
     }
   }
@@ -104,11 +100,11 @@ atom-text-editor {
 
   .syntax--meta.syntax--brace,
   .syntax--meta.syntax--delimiter {
-    color: fadeout(@syntax-text-color, 40%);
+    color: fadeout(@syntax-text-color, 50%);
   }
 
   .syntax--comment {
-    color: @syntax-foreground-faded;
+    color: fadeout(@syntax-text-color, 70%);
 
     .syntax--keyword,
     .syntax--other,
