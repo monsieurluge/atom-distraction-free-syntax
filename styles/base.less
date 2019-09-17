@@ -44,14 +44,14 @@ atom-text-editor {
   // ------------------------------------------------------------- SYNTAX STYLES
 
   .syntax--punctuation {
-    color: fadeout(@syntax-text-color, 50%);
+    color: @syntax-foreground-faded;
   }
 
   .syntax--keyword {
     color: @highlight-language;
 
     &.syntax--operator:not(.syntax--new) {
-      color: fadeout(@syntax-text-color, 50%);
+      color: @syntax-foreground-faded;
     }
   }
 
@@ -69,7 +69,7 @@ atom-text-editor {
       }
 
       &.syntax--type.syntax--arrow {
-        color: fadeout(@syntax-text-color, 50%);
+        color: @syntax-foreground-faded;
       }
     }
   }
@@ -114,17 +114,17 @@ atom-text-editor {
 
   .syntax--meta.syntax--brace,
   .syntax--meta.syntax--delimiter {
-    color: fadeout(@syntax-text-color, 50%);
+    color: @syntax-foreground-faded;
   }
 
   .syntax--comment {
-    color: fadeout(@syntax-text-color, 70%);
+    color: fadeout(@syntax-foreground-faded, 15%);
 
     .syntax--keyword,
     .syntax--other,
     .syntax--support,
     .syntax--storage.syntax--type.syntax--class {
-      color: fadeout(@syntax-text-color, 70%);
+      color: fadeout(@syntax-foreground-faded, 15%);
     }
   }
 
