@@ -1,7 +1,7 @@
 {
   "name": "atom-distraction-free-syntax",
   "theme": "syntax",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "less colors, less informations, less distraction",
   "keywords": [
     "syntax",
