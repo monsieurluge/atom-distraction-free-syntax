@@ -5,8 +5,6 @@ atom-text-editor .gutter {
   &.line-numbers {
     .line-number {
       color: @syntax-gutter-text-color;
-      opacity: 0;
-      transition: opacity 0.5s;
     }
 
     .line-number.cursor-line {
@@ -14,8 +12,20 @@ atom-text-editor .gutter {
       background-color: @syntax-gutter-background-color-selected;
     }
 
-    &:hover .line-number {
-      opacity: 1;
+    [class*="git-line"] {
+      border-width: 0;
+    }
+
+    &:hover [class*="git-line"] {
+      border-width: 2px;
+    }
+
+    .git-line-removed::before {
+      visibility: hidden;
+    }
+
+    &:hover .git-line-removed::before {
+      visibility: visible;
     }
   }
 
