@@ -30,15 +30,22 @@ atom-text-editor {
   // --------------------------------------------------------------- FOLD MARKER
 
   .fold-marker {
-      padding: 0 3px;
-      color: @syntax-text-color;
-      background-color: @accent;
+    &:after {
+      padding: 4px;
+      content: '...';
+      color: @accent;
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 3px;
+      cursor: pointer;
+    }
 
+    &:hover {
       &:after {
-        cursor: pointer;
-        content: '...';
+        color: @syntax-background-color;
+        background-color: @accent;
+        border-radius: 3px;
       }
+    }
   }
 
   // ------------------------------------------------------------- SYNTAX STYLES
