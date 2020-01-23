@@ -1,5 +1,5 @@
 atom-text-editor {
-  color: @syntax-text-color;
+  color: @text-color-neutral;
   background-color: @syntax-background-color;
 
   .wrap-guide {
@@ -27,7 +27,7 @@ atom-text-editor {
     color: @syntax-cursor-color;
   }
 
-  // --------------------------------------------------------------- FOLD MARKER
+  // ---------- FOLD MARKER
 
   .fold-marker {
     &:after {
@@ -45,109 +45,6 @@ atom-text-editor {
         background-color: @accent;
         border-radius: 3px;
       }
-    }
-  }
-
-  // ------------------------------------------------------------- SYNTAX STYLES
-
-  .syntax--punctuation {
-    color: @syntax-foreground-faded;
-  }
-
-  .syntax--keyword {
-    color: @highlight-language;
-
-    &.syntax--operator:not(.syntax--new) {
-      color: @syntax-foreground-faded;
-    }
-  }
-
-  .syntax--storage {
-    color: @highlight-language;
-
-    &.syntax--type {
-      color: @syntax-text-color;
-
-      &.syntax--type.syntax--function,
-      &.syntax--type.syntax--const,
-      &.syntax--type.syntax--var,
-      &.syntax--type.syntax--class {
-        color: @highlight-language;
-      }
-
-      &.syntax--type.syntax--arrow {
-        color: @syntax-foreground-faded;
-      }
-    }
-  }
-
-  .syntax--constant {
-    color: @red;
-
-    &.syntax--language {
-      color: @highlight-language;
-    }
-
-    &.syntax--character.syntax--escape {
-      color: @highlight-language;
-    }
-
-    &.syntax--decimal,
-    &.syntax--numeric {
-      color: @green;
-    }
-  }
-
-  .syntax--variable {
-    color: @red;
-  }
-
-  .syntax--invalid.syntax--illegal {
-    text-decoration-line: line-through;
-  }
-
-  .syntax--string {
-    color: @green;
-  }
-
-  &.syntax--decimal,
-  &.syntax--numeric {
-      color: @green;
-  }
-
-  .syntax--string.syntax--function {
-    color: @highlight-language;
-  }
-
-  .syntax--meta.syntax--brace,
-  .syntax--meta.syntax--delimiter {
-    color: @syntax-foreground-faded;
-  }
-
-  .syntax--comment {
-    color: fadeout(@syntax-foreground-faded, 15%);
-
-    .syntax--keyword,
-    .syntax--other,
-    .syntax--support,
-    .syntax--storage.syntax--type.syntax--class {
-      color: fadeout(@syntax-foreground-faded, 15%);
-    }
-  }
-
-  .syntax--none {
-    color: @syntax-text-color;
-  }
-
-  .syntax--name.syntax--tag.syntax--html {
-    color: @purple;
-  }
-
-  .syntax--source.syntax--gfm .syntax--markup {
-    -webkit-font-smoothing: auto;
-
-    &.syntax--heading {
-      color: @highlight-language;
     }
   }
 }
