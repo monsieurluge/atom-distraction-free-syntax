@@ -1,16 +1,13 @@
-@import "syntax-variables";
-
 atom-text-editor {
   color: @syntax-text-color;
   background-color: @syntax-background-color;
 
   .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
+    background-color: @syntax-selection-color;
   }
 
   .indent-guide {
     color: transparent;
-    border-left: 1px solid @syntax-wrap-guide-color;
   }
 
   .invisible-character {
@@ -38,38 +35,26 @@ atom-text-editor {
     }
   }
 
-  .gutter {
-    color: @syntax-gutter-text-color;
-    background-color: @syntax-gutter-background-color;
-
-    .line-number.folded,
-    .line-number:after {
-      color: @accent;
-    }
-  }
-
-  .fold-marker {
-    padding: 0 3px;
-    color: @syntax-text-color;
-    background-color: @accent;
-    border-radius: 3px;
-
-    &:after {
-      content: '...';
-      color: @syntax-background-color;
-    }
-  }
-
-  .invisible {
-    color: orange;
-  }
-
   .cursor {
     color: @syntax-cursor-color;
   }
 
-  .selection .region {
-    background-color: @syntax-selection-color;
+  // --------------------------------------------------------------- FOLD MARKER
+
+  .fold-marker {
+    &:after {
+      padding: 4px;
+      content: '...';
+      color: @syntax-background-color;
+    }
+
+    &:hover {
+      &:after {
+        color: @syntax-background-color;
+        background-color: @accent;
+        border-radius: 3px;
+      }
+    }
   }
 
   // ------------------------------------------------------------- SYNTAX STYLES
@@ -119,6 +104,11 @@ atom-text-editor {
     &.syntax--character.syntax--escape {
       color: @highlight-language;
     }
+
+    &.syntax--decimal,
+    &.syntax--numeric {
+      color: @green;
+    }
   }
 
   .syntax--variable {
@@ -133,8 +123,9 @@ atom-text-editor {
     color: @green;
   }
 
-  .syntax--string {
-    color: @green;
+  &.syntax--decimal,
+  &.syntax--numeric {
+      color: @green;
   }
 
   .syntax--string.syntax--function {
@@ -147,9 +138,10 @@ atom-text-editor {
   }
 
   .syntax--comment {
-    color: fadeout(@syntax-text-color, 70%);
+    color: fadeout(@syntax-foreground-faded, 15%);
 
     .syntax--keyword,
+    .syntax--other,
     .syntax--support,
     .syntax--storage.syntax--type.syntax--class {
       color: fadeout(@syntax-text-color, 60%);
@@ -158,6 +150,10 @@ atom-text-editor {
 
   .syntax--none {
     color: @syntax-text-color;
+  }
+
+  .syntax--name.syntax--tag.syntax--html {
+    color: @purple;
   }
 
   .syntax--source.syntax--gfm .syntax--markup {

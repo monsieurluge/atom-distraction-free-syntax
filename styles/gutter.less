@@ -1,0 +1,37 @@
+atom-text-editor .gutter {
+
+  // -------------------------------------------------------------- LINE NUMBERS
+
+  &.line-numbers {
+    .line-number {
+      color: @syntax-gutter-text-color;
+    }
+
+    .line-number.cursor-line {
+      color: @syntax-gutter-text-color-selected;
+      background-color: @syntax-gutter-background-color-selected;
+    }
+
+    [class*="git-line"] {
+      border-width: 0;
+    }
+
+    &:hover [class*="git-line"] {
+      border-width: 2px;
+    }
+
+    .git-line-removed::before {
+      visibility: hidden;
+    }
+
+    &:hover .git-line-removed::before {
+      visibility: visible;
+    }
+  }
+
+  // --------------------------------------------------------------- FOLD MARKER
+
+  &.line-numbers .line-number.folded {
+    color: @accent;
+  }
+}
