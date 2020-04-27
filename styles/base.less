@@ -70,14 +70,14 @@ atom-text-editor {
   // ------------------------------------------------------------- SYNTAX STYLES
 
   .syntax--punctuation {
-    color: fadeout(@syntax-text-color, 40%);
+    color: fadeout(@syntax-text-color, 70%);
   }
 
   .syntax--keyword {
     color: @highlight-language;
 
     &.syntax--operator:not(.syntax--new) {
-      color: fadeout(@syntax-text-color, 40%);
+      color: fadeout(@syntax-text-color, 50%);
     }
   }
 
@@ -95,7 +95,7 @@ atom-text-editor {
       }
 
       &.syntax--type.syntax--arrow {
-        color: fadeout(@syntax-text-color, 40%);
+        color: fadeout(@syntax-text-color, 50%);
       }
     }
   }
@@ -243,7 +243,7 @@ atom-text-editor {
     .syntax--keyword,
     .syntax--support,
     .syntax--storage.syntax--type.syntax--class {
-      color: fadeout(@syntax-text-color, 50%);
+      color: fadeout(@syntax-text-color, 60%);
     }
   }
 
