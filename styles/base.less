@@ -17,26 +17,20 @@ atom-text-editor {
     color: @syntax-background-color;
   }
 
+  .line-number {
+    opacity: 1;
+    color: @syntax-gutter-text-color;
+  }
+
   .line.cursor-line {
+    color: @syntax-gutter-text-color-selected;
     background-color: @syntax-selection-color;
   }
 
   .gutter.line-numbers {
-    opacity: 0;
-    transition: opacity 0.5s;
-
-    .line-number {
-      opacity: 1;
-    }
-
     .line-number.cursor-line {
       color: @syntax-gutter-text-color-selected;
       background-color: @syntax-gutter-background-color-selected;
-      border-radius: 3px;
-    }
-
-    &:hover {
-      opacity: 1;
     }
   }
 
