@@ -3,7 +3,7 @@ atom-text-editor {
   background-color: @syntax-background-color;
 
   .wrap-guide {
-    background-color: @syntax-selection-color;
+    background-color: @syntax-wrap-guide-color;
   }
 
   .indent-guide {
@@ -14,51 +14,64 @@ atom-text-editor {
     color: @syntax-background-color;
   }
 
-  .line.cursor-line,
-  .selection .region {
+  .line.cursor-line {
+    color: @syntax-text-color;
     background-color: @syntax-selection-color;
   }
 
-  .invisible {
-    color: orange;
+  .gutter.line-numbers {
+    .line-number {
+      opacity: 1;
+      color: @syntax-gutter-text-color;
+    }
+
+    .line-number .icon-right {
+      opacity: 1;
+    }
+
+    .line-number.folded .icon-right {
+      color: @accent;
+    }
+
+    .line-number.cursor-line {
+      color: @syntax-gutter-text-color-selected;
+      background-color: @syntax-gutter-background-color-selected;
+    }
   }
 
   .cursor {
     color: @syntax-cursor-color;
   }
 
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
   // --------------------------------------------------------------- FOLD MARKER
 
   .fold-marker {
     &:after {
-      padding: 4px;
       content: '...';
+      margin-left: 4px;
+      padding: 2px 4px;
       color: @accent;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 3px;
       cursor: pointer;
-    }
-
-    &:hover {
-      &:after {
-        color: @syntax-background-color;
-        background-color: @accent;
-        border-radius: 3px;
-      }
     }
   }
 
   // ------------------------------------------------------------- SYNTAX STYLES
 
   .syntax--punctuation {
-    color: @syntax-foreground-faded;
+    color: fadeout(@syntax-text-color, 70%);
   }
 
   .syntax--keyword {
     color: @highlight-language;
 
     &.syntax--operator:not(.syntax--new) {
-      color: @syntax-foreground-faded;
+      color: fadeout(@syntax-text-color, 50%);
     }
   }
 
@@ -76,13 +89,17 @@ atom-text-editor {
       }
 
       &.syntax--type.syntax--arrow {
-        color: @syntax-foreground-faded;
+        color: fadeout(@syntax-text-color, 50%);
       }
     }
   }
 
   .syntax--constant {
     color: @red;
+
+    &.syntax--numeric {
+        color: @green;
+    }
 
     &.syntax--language {
       color: @highlight-language;
@@ -121,7 +138,7 @@ atom-text-editor {
 
   .syntax--meta.syntax--brace,
   .syntax--meta.syntax--delimiter {
-    color: @syntax-foreground-faded;
+    color: fadeout(@syntax-text-color, 40%);
   }
 
   .syntax--comment {
@@ -131,7 +148,7 @@ atom-text-editor {
     .syntax--other,
     .syntax--support,
     .syntax--storage.syntax--type.syntax--class {
-      color: fadeout(@syntax-foreground-faded, 15%);
+      color: fadeout(@syntax-text-color, 60%);
     }
   }
 
